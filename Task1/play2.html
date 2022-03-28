@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600&display=swap" rel="stylesheet">
+  <title>Rock, Paper, Scissors</title>
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+.selected_circle_result{
+    margin-top:70px;
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    transition: 0.2s;
+    border-radius: 50%;
+    background-color: white;
+  }
+  .player_one_item_result{
+      margin-left: 300px;
+      transform: translateX(0px);
+      border: 18px solid hsl(349, 71%, 52%);
+      -webkit-box-shadow: 0px 6px 0px 1px hsl(349, 62%, 35%);
+      -moz-box-shadow: 0px 6px 0px 1px hsl(349, 62%, 35%);
+      box-shadow: 0px 6px 0px 1px hsl(349, 62%, 35%);
+  }
+  .player_one_item_result img{
+    padding:70px;
+    width:120px;
+  }
+  .pick_title_result{
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    text-transform: uppercase;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .player_one_pick_title_result{
+    margin-top: 50px;
+    margin-right: 650px;
+    font-size: 30px;
+    letter-spacing:2px;
+  }
+  .player_two_pick_title_result{
+    margin-top: -35px;
+    margin-left: 600px;
+    font-size: 30px;
+    letter-spacing:2px;
+  }
+  .selected_player_two_result{
+        margin-left: 930px;
+        background-color: white;
+        border: 18px solid hsl(230, 89%, 62%);
+        -webkit-box-shadow: 0px 6px 0px 1px hsl(230, 62%, 35%);
+        -moz-box-shadow: 0px 6px 0px 1px hsl(230, 62%, 35%);
+        box-shadow: 0px 6px 0px 1px hsl(230, 62%, 35%);
+  }
+  .selected_player_two_result img{
+    padding:60px;
+    width:120px;
+  }
+  .result{
+        width:250px;
+        font-family: 'Barlow Semi Condensed', sans-serif;
+        margin-top: 150px;
+        margin-left: 650px;
+    }
+    .result span{
+      color: white;
+      font-size: 50px;
+      letter-spacing:2px;
+      text-transform: uppercase;
+    }
+    .button{
+      margin-top:20px;
+      margin-left: 20px;
+      background-color: white;
+      width:150px;
+      height:40px;
+      text-align: center;
+      border-radius: 5px;
+    }
+    .button p{
+      padding:10px;
+      color:hsl(349, 71%, 52%);
+      font-size: 15px;
+      text-transform: uppercase;
+     
+    }
+    .button p:hover{
+      color:hsl(230, 62%, 35%);
+    }
+    @media only screen and (min-width: 340px) and (max-width: 400px) {
+      .selected_circle_result{
+        margin-top:20px;
+        width: 100px;
+        height: 100px;
+    }
+  .player_one_item_result{
+      margin-left: 20px;
+      transform: translateX(0px);
+      border: 10px solid hsl(349, 71%, 52%);
+  }
+  .player_one_item_result img{
+    padding:20px;
+    width:60px;
+  }
+  .player_one_pick_title_result{
+    margin-top: 80px;
+    margin-right: 200px;
+    font-size: 15px;
+    letter-spacing:2px;
+  }
+  .player_two_pick_title_result{
+    margin-top: -18px;
+    margin-left: 120px;
+    font-size: 15px;
+    letter-spacing:2px;
+  }
+  .selected_player_two_result{
+        margin-left: 190px;
+        border: 10px solid hsl(230, 89%, 62%);
+  }
+  .selected_player_two_result img{
+    padding:20px;
+    width:60px;
+  }
+  .result{
+        width:250px;
+        font-family: 'Barlow Semi Condensed', sans-serif;
+        margin-top: 200px;
+        margin-left: 100px;
+    }
+    .result span{
+      color: white;
+      font-size: 40px;
+      letter-spacing:2px;
+      text-transform: uppercase;
+    }
+    .button{
+      margin-top:20px;
+      margin-left: 5px;
+      background-color: white;
+      width:150px;
+      height:40px;
+      text-align: center;
+      border-radius: 5px;
+    }
+    .button p{
+      padding:10px;
+      color:hsl(349, 71%, 52%);
+      font-size: 15px;
+      text-transform: uppercase;
+     
+    }
+    .button p:hover{
+      color:hsl(230, 62%, 35%);
+    }
+}
+@media only screen and (min-width: 400px) and (max-width: 500px) {
+  .selected_circle_result{
+        margin-top:20px;
+        width: 100px;
+        height: 100px;
+    }
+  .player_one_item_result{
+      margin-left: 60px;
+      transform: translateX(0px);
+      border: 10px solid hsl(349, 71%, 52%);
+  }
+  .player_one_item_result img{
+    padding:20px;
+    width:60px;
+  }
+  .player_one_pick_title_result{
+    margin-top: 80px;
+    margin-right: 200px;
+    font-size: 15px;
+    letter-spacing:2px;
+  }
+  .player_two_pick_title_result{
+    margin-top: -18px;
+    margin-left: 170px;
+    font-size: 15px;
+    letter-spacing:2px;
+  }
+  .selected_player_two_result{
+        margin-left: 250px;
+        border: 10px solid hsl(230, 89%, 62%);
+  }
+  .selected_player_two_result img{
+    padding:20px;
+    width:60px;
+  }
+  .result{
+        width:250px;
+        font-family: 'Barlow Semi Condensed', sans-serif;
+        margin-top: 200px;
+        margin-left: 120px;
+    }
+    .result span{
+      color: white;
+      font-size: 40px;
+      letter-spacing:2px;
+      text-transform: uppercase;
+    }
+    .button{
+      margin-top:20px;
+      margin-left: 5px;
+      background-color: white;
+      width:150px;
+      height:40px;
+      text-align: center;
+      border-radius: 5px;
+    }
+    .button p{
+      padding:10px;
+      color:hsl(349, 71%, 52%);
+      font-size: 15px;
+      text-transform: uppercase;
+     
+    }
+    .button p:hover{
+      color:hsl(230, 62%, 35%);
+    }
+}
+@media only screen and (min-width: 500px) and (max-width: 600px) {
+  .selected_circle_result{
+        margin-top:20px;
+        width: 100px;
+        height: 100px;
+    }
+  .player_one_item_result{
+      margin-left: 80px;
+      transform: translateX(0px);
+      border: 10px solid hsl(349, 71%, 52%);
+  }
+  .player_one_item_result img{
+    padding:20px;
+    width:60px;
+  }
+  .player_one_pick_title_result{
+    margin-top: 80px;
+    margin-right: 200px;
+    font-size: 15px;
+    letter-spacing:2px;
+  }
+  .player_two_pick_title_result{
+    margin-top: -18px;
+    margin-left: 190px;
+    font-size: 15px;
+    letter-spacing:2px;
+  }
+  .selected_player_two_result{
+        margin-left: 280px;
+        border: 10px solid hsl(230, 89%, 62%);
+  }
+  .selected_player_two_result img{
+    padding:20px;
+    width:60px;
+  }
+  .result{
+        margin-top: 200px;
+        margin-left: 150px;
+    }
+    .result span{
+      color: white;
+      font-size: 40px;
+      letter-spacing:2px;
+      text-transform: uppercase;
+    }
+    .button{
+      margin-top:20px;
+      margin-left: 5px;
+      background-color: white;
+      width:150px;
+      height:40px;
+      text-align: center;
+      border-radius: 5px;
+    }
+    .button p{
+      padding:10px;
+      color:hsl(349, 71%, 52%);
+      font-size: 15px;
+      text-transform: uppercase;
+     
+    }
+    .button p:hover{
+      color:hsl(230, 62%, 35%);
+    }
+}
+  </style>
+</head>
+<body>
+
+  <div class="header">
+      <div class="head-text">
+          <h1>ROCK</h1>
+          <h1>PAPER</h1>
+          <h1>SCISSORS</h1>
+      </div>
+      <div class="head-box">
+          <h3>SCORE</h3>
+          <span>12</span>
+      </div>
+  </div>
+  <div class="selected_item">
+    <span class="pick_title_result player_one_pick_title_result">You Picked</span>
+      <div>
+          <div id="rock" class="selected_circle_result player_one_item_result"><img src="images/icon-rock.svg" align="center"/></div>
+      </div>
+      <span class="pick_title_result player_two_pick_title_result">The House Picked</span>
+      <div>
+        <div id="rock" class="selected_circle_result selected_player_two_result"><img src="images/icon-paper.svg" align="center"/></div>
+      </div>
+      <div class="result">
+        <span>You Lose</span>
+        <div class="button"><a href="index.html" style=" text-decoration: none;"><p>Play Again</p></a></div>
+       </div>
+  </div>
+</body>
+</html>
+
